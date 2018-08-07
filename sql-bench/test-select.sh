@@ -69,9 +69,9 @@ do_many($dbh,$server->create("bench1",
 			      "idn integer(6) NOT NULL",
 			      "rev_idn integer(6) NOT NULL",
 			      "grp integer(6) NOT NULL"],
-			     ["primary key (region,idn)",
-			      "unique (region,rev_idn)",
-			      "unique (region,grp,idn)"]));
+			     ["primary key a (region,idn)",
+			      "unique b (region,rev_idn)",
+			      "unique c (region,grp,idn)"]));
 if ($opt_lock_tables)
 {
   do_query($dbh,"LOCK TABLES bench1 WRITE");
