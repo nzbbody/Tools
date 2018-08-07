@@ -38,7 +38,7 @@ $opt_loop_count=10000; # Change this to make test harder/easier
 # This is the default value for the amount of tables used in this test.
 
 $pwd = cwd(); $pwd = "." if ($pwd eq '');
-require "$pwd/bench-init.pl" || die "Can't read Configuration file: $!\n";
+require "$pwd/bench-init.pl.sh" || die "Can't read Configuration file: $!\n";
 
 $create_loop_count=$opt_loop_count;
 if ($opt_small_test)

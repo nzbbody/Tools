@@ -35,7 +35,7 @@ $benchmark_version="2.15";
 use Getopt::Long;
 use POSIX;
 
-require "$pwd/server-cfg" || die "Can't read Configuration file: $!\n";
+require "$pwd/server-cfg.sh" || die "Can't read Configuration file: $!\n";
 
 $|=1;				# Output data immediately
 

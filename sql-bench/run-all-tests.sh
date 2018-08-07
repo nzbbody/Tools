@@ -40,7 +40,7 @@ $opt_silent=1;			# Don't write header
 
 @ORG_ARGV=@ARGV;
 $pwd = cwd(); $pwd = "." if ($pwd eq '');
-require "$pwd/bench-init.pl" || die "Can't read Configuration file: $!\n";
+require "$pwd/bench-init.pl.sh" || die "Can't read Configuration file: $!\n";
 $opt_silent=0;
 $perl=$^X;
 $machine=machine();
@@ -50,6 +50,7 @@ $dir= ($pwd =~ /\\/) ? '\\' : '/';	# directory symbol for shell
 $prog_args="";
 foreach $arg (@ORG_ARGV)
 {
+  print "$arg\n";
   if ($redirect)
   {
     $prog_args.="'" . $arg . "' ";

@@ -33,7 +33,7 @@ $str_length=65000;	# This is the length of blob strings in PART:5
 $max_test=20;		# How many times to test if the server is busy
 
 $pwd = cwd(); $pwd = "." if ($pwd eq '');
-require "$pwd/bench-init.pl" || die "Can't read Configuration file: $!\n";
+require "$pwd/bench-init.pl.sh" || die "Can't read Configuration file: $!\n";
 
 # This is the length of blob strings in PART:5
 $str_length=min($limits->{'max_text_size'},$limits->{'query_size'}-30,$str_length);
