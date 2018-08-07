@@ -32,7 +32,7 @@ $opt_regions=6;
 $opt_groups=100;
 
 $pwd = cwd(); $pwd = "." if ($pwd eq '');
-require "$pwd/bench-init.pl" || die "Can't read Configuration file: $!\n";
+require "$pwd/bench-init.pl.sh" || die "Can't read Configuration file: $!\n";
 
 $columns=min($limits->{'max_columns'},500,($limits->{'query_size'}-50)/24,
 	     $limits->{'max_conditions'}/2-3);

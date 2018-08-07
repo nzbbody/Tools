@@ -32,7 +32,7 @@ $opt_loop_count=10000;	    # Change this to make test harder/easier
 $opt_medium_loop_count=100; # Change this to make test harder/easier
 
 $pwd = cwd(); $pwd = "." if ($pwd eq '');
-require "$pwd/bench-init.pl" || die "Can't read Configuration file: $!\n";
+require "$pwd/bench-init.pl.sh" || die "Can't read Configuration file: $!\n";
 
 # Avoid warnings for variables in bench-init.pl
 # (Only works with perl 5.6)

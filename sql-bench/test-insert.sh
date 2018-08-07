@@ -40,7 +40,7 @@ $many_keys_loop_count=$opt_loop_count;
 $opt_read_key_loop_count=$opt_loop_count;
 
 $pwd = cwd(); $pwd = "." if ($pwd eq '');
-require "$pwd/bench-init.pl" || die "Can't read Configuration file: $!\n";
+require "$pwd/bench-init.pl.sh" || die "Can't read Configuration file: $!\n";
 
 if ($opt_small_test)
 {

@@ -29,7 +29,7 @@ $opt_loop_count=1000; # Change this to make test harder/easier
 $opt_field_count=1000;
 
 $pwd = cwd(); $pwd = "." if ($pwd eq '');
-require "$pwd/bench-init.pl" || die "Can't read Configuration file: $!\n";
+require "$pwd/bench-init.pl.sh" || die "Can't read Configuration file: $!\n";
 
 $opt_field_count=min($opt_field_count,$limits->{'max_columns'},
 		     ($limits->{'query_size'}-30)/14);

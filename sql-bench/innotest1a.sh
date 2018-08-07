@@ -12,7 +12,7 @@ use Benchmark;
 $opt_loop_count = 200000;
 
 $pwd = cwd(); $pwd = "." if ($pwd eq '');
-require "$pwd/bench-init.pl" || die "Can't read Configuration file: $!\n";
+require "$pwd/bench-init.pl.sh" || die "Can't read Configuration file: $!\n";
 
 print "Innotest1a: MySQL/InnoDB stress test in Perl\n";
 print "-------------------------------------------\n";

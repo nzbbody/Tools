@@ -31,7 +31,7 @@ $opt_field_count=1000;		# Add until this many fields.
 $opt_time_limit=10*60;		# Don't wait more than 10 min for some tests
 
 $pwd = cwd(); $pwd = "." if ($pwd eq '');
-require "$pwd/bench-init.pl" || die "Can't read Configuration file: $!\n";
+require "$pwd/bench-init.pl.sh" || die "Can't read Configuration file: $!\n";
 
 $opt_field_count=min($opt_field_count,$limits->{'max_columns'},
 		     ($limits->{'query_size'}-30)/14);
