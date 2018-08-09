@@ -2,7 +2,7 @@ shPath=$(cd $(dirname $0);pwd)
 cd $shPath
 set -e
 
-shFile=test-select.sh
+shFile=test-insert-enc.sh
 port=3307
 database=sql_bench
 
