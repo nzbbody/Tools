@@ -24,6 +24,7 @@ use Cwd;
 use DBI;
 use Getopt::Long;
 use Benchmark;
+use Time::HiRes qw(gettimeofday);
 
 $opt_loop_count=10000;
 $opt_medium_loop_count=1000;
@@ -60,6 +61,20 @@ $start_time=new Benchmark;
 ####
 
 sub exeSelect
+{
+  print "test select[$exeSQL] \n";
+  ($begin_sec, $begin_usec) = gettimeofday;
+  for ($tests=0 ; $tests < $opt_loop_count ; $tests++)
+  {
+    fetch_all_rows($dbh,"$exeSQL$tests");
+  }
+  ($end_sec, $end_usec) = gettimeofday;
+  $time_used = ($end_sec - $begin_sec)*1000000 + ($end_usec - $begin_usec);
+  print "Time to select ($opt_loop_count): ", $time_used, "\n\n";
+}
+
+
+sub exeSelect_Benchmark
 {
   print "test select[$exeSQL] \n";
   $loop_time=new Benchmark;
