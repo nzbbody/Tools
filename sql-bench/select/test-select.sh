@@ -65,27 +65,27 @@ sub exeSelect
   $loop_time=new Benchmark;
   for ($tests=0 ; $tests < $opt_loop_count ; $tests++)
   {
-    fetch_all_rows($dbh,"$exeSQL");
+    fetch_all_rows($dbh,"$exeSQL$tests");
   }
   $end_time=new Benchmark;
-  print "Time to select ($opt_loop_count): ", timestr(timediff($end_time, $loop_time),"all"), "\n\n";
+  print "Time to select ($opt_loop_count): ", timestr(timediff($end_time, $loop_time),"noc"), "\n\n";
 }
 
 
 select_test:
 {
   local $exeSQL;
-  $exeSQL="select sql_no_cache idn, rev_idn from bench1 where idn=100";
+  $exeSQL="select sql_no_cache idn, rev_idn from bench1 where idn=";
   exeSelect($exeSQL);
   
-  $exeSQL="select sql_no_cache idn+rev_idn from bench1 where idn=100";
-  exeSelect($exeSQL);
+  #$exeSQL="select sql_no_cache idn+rev_idn from bench1 where idn=100";
+  #exeSelect($exeSQL);
 
-  $exeSQL="select sql_no_cache idn, rev_idn from bench1 where idn<100";
-  exeSelect($exeSQL);
+  #$exeSQL="select sql_no_cache idn, rev_idn from bench1 where idn<100";
+  #exeSelect($exeSQL);
   
-  $exeSQL="select sql_no_cache idn+rev_idn from bench1 where idn<100";
-  exeSelect($exeSQL);
+  #$exeSQL="select sql_no_cache idn+rev_idn from bench1 where idn<5";
+  #exeSelect($exeSQL);
   
 }
 
